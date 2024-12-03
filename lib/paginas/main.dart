@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Booki',
-      initialRoute: 'login',
+      initialRoute: 'pantalla1',
       routes: {
         'pantalla1': (context) => const Login(),
         'pantalla2': (context) => const Registro(),
@@ -22,9 +22,6 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Material App Bar'),
-        ),
-        body: const Center(
-          child: Text('Hello World'),
         ),
       ),
     );

@@ -55,6 +55,7 @@ class _PantallaInicioState extends State<PantallaInicio> {
                   ),
                   maxLength: 50,
                   validator: (value) {
+                    /*
                     if (value == null || value.isEmpty) {
                       return 'El correo es obligatorio';
                     }
@@ -64,7 +65,7 @@ class _PantallaInicioState extends State<PantallaInicio> {
                     }
                     if (value != 'fj.murillo@unah.hn') {
                       return 'Correo Incorrecto';
-                    }
+                    }*/
 
                     return null;
                   },
@@ -94,12 +95,13 @@ class _PantallaInicioState extends State<PantallaInicio> {
                   obscureText: _obscurePassword,
                   maxLength: 30,
                   validator: (value) {
-                    if (value == null || value.isEmpty) {
+                    /*if (value == null || value.isEmpty) {
                       return 'La contraseña es obligatoria';
                     }
                     if (value != '20222001186') {
                       return 'La contraseña es incorrecta';
-                    }
+                    }*/
+
                     return null;
                   },
                 ),
