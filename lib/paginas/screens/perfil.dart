@@ -21,7 +21,7 @@ class Perfil extends StatelessWidget {
         Container(
           child: Row(
             children: [
-              SizedBox(width: 10,),
+              SizedBox(width: 16,),
               Text('Que nueva Historia tienes en mente?:')
             ],
           ),

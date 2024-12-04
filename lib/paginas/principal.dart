@@ -31,7 +31,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Booki',style: TextStyle(color: Colors.green[200]),),
+      appBar: AppBar(title: Text('Booki',style: TextStyle(color: Colors.green[200],fontWeight: FontWeight.bold),),
       actions: [
         IconButton(onPressed: (){}, icon: Icon(Icons.person),
         color: Colors.green[200],
@@ -55,6 +55,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
         onTap: (value) {
           setState(() {});
           currentIndex = value;
+          
 
           _pageController.jumpToPage(value);
 
@@ -64,9 +65,10 @@ class _PrincipalPageState extends State<PrincipalPage> {
             curve: Curves.easeIn,
           );
         },
-        backgroundColor: const Color.fromARGB(255, 229, 233, 240),
-        selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.black,
+        
+        selectedItemColor: Colors.blueAccent,
+        unselectedItemColor: Colors.cyan,
+        
         items: const [
           BottomNavigationBarItem(
             label: 'Principal',

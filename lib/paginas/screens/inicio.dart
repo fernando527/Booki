@@ -16,8 +16,7 @@ class Inicio extends StatelessWidget {
 
         TextField(
         cursorColor: Colors.black,
-      style: TextStyle(color: Colors.white),
-      controller: TextEditingController(),
+      
 
          decoration:InputDecoration(
       label: Text('Buscador',
