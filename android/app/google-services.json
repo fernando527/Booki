@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "619961194445",
+    "project_id": "booki-b029d",
+    "storage_bucket": "booki-b029d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:619961194445:android:a34d881145c74838a39684",
+        "android_client_info": {
+          "package_name": "hn.edu.com"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJDi19hRZ06uItmUg7GBWbLLQB1ue3YgU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
