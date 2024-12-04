@@ -31,13 +31,20 @@ class _PrincipalPageState extends State<PrincipalPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text('Booki',style: TextStyle(color: Colors.green[200]),),
+      actions: [
+        IconButton(onPressed: (){}, icon: Icon(Icons.person),
+        color: Colors.green[200],
+        iconSize: 28,)
+      ],
+      ),
       body: PageView(
         controller: _pageController,
         physics: const NeverScrollableScrollPhysics(),
         children: [
           const Inicio(),
-          const Perfil(),
           const Biblioteca(),
+          const Perfil(),
           Container(
             color: Colors.white,
           ),

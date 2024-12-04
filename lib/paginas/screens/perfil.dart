@@ -9,7 +9,26 @@ class Perfil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.blue,
+     child: Column(
+      children: [
+        const SizedBox(height: 22,),
+        const CircleAvatar(backgroundColor: Colors.blue,radius: 36),
+        SizedBox(height: 22,),
+        Text('You',style: TextStyle(fontSize: 22),),
+        
+        const SizedBox(height: 20,),
+
+        Container(
+          child: Row(
+            children: [
+              SizedBox(width: 10,),
+              Text('Que nueva Historia tienes en mente?:')
+            ],
+          ),
+        ),
+
+      ],
+     ),
     );
   }
 }
