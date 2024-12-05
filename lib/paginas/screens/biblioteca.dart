@@ -19,7 +19,6 @@ class _BibliotecaState extends State<Biblioteca> {
       FirebaseFirestore.instance.collection('libros').snapshots();
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
     return StreamBuilder<QuerySnapshot>(
       stream: _librosStream,
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -45,26 +44,6 @@ class _BibliotecaState extends State<Biblioteca> {
               .cast(),
         );
       },
-=======
-    return Container(
-     child: Column(
-      children: [
-    SizedBox(height: 20,),
-    Text('Tus Libros',
-    style: TextStyle(fontSize: 20,
-    color: Colors.blueAccent
-    ),),
-    
-    //aqui irian todos los libors guardados por el usuario 
-    ////implementar cuando se haya creado la base en fire base
-    
-    //ListView.builder(),
-    
-
-      ],
-
-     ),
->>>>>>> d0e237ee364dbf1aa3a7eb3d71eb31a6011ec6f9
     );
   }
 }

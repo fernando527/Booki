@@ -1,3 +1,4 @@
+import 'package:booki/paginas/screens/biblioteca.dart';
 import 'package:flutter/material.dart';
 import 'package:booki/paginas/login.dart';
 import 'package:booki/paginas/registro.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         'pantalla1': (context) => const Login(),
         'pantalla2': (context) => const Registro(),
         'pantalla3': (context) => const Principal(),
+        'pantalla4': (context) => const Biblioteca()
       },
       home: Scaffold(
         appBar: AppBar(
