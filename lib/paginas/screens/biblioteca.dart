@@ -27,8 +27,7 @@ class _BibliotecaState extends State<Biblioteca> {
         }
 
         if (snapshot.connectionState == ConnectionState.waiting) {
-
-          return Container(
+            return Container(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -36,21 +35,23 @@ class _BibliotecaState extends State<Biblioteca> {
               ],
             ),
           );
+          
         }
 
-        return ListView(
-          children: snapshot.data!.docs
-              .map((DocumentSnapshot document) {
-                Map<String, dynamic> data =
+        return ListView.builder(
+          itemCount:  snapshot.data!.docs.length,
+          itemBuilder: (context, index) {
+            DocumentSnapshot document=snapshot.data!.docs[index];
+            Map<String, dynamic> data =
                     document.data()! as Map<String, dynamic>;
-                return ListTile(
+            return ListTile(
                   title: Text(data['titulo']),
                   subtitle: Text(data['autor']),
+                  onTap: (){
+                    Navigator.pushNamed(context, 'Libros');
+                  },
                 );
-              })
-              .toList()
-              .cast(),
-
+          },
         );
       },
     );
