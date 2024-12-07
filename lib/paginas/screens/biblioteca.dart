@@ -27,7 +27,15 @@ class _BibliotecaState extends State<Biblioteca> {
         }
 
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Text("Trabajando...");
+
+          return Container(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CircularProgressIndicator()
+              ],
+            ),
+          );
         }
 
         return ListView(
@@ -42,6 +50,7 @@ class _BibliotecaState extends State<Biblioteca> {
               })
               .toList()
               .cast(),
+
         );
       },
     );
