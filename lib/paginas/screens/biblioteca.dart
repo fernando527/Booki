@@ -23,11 +23,11 @@ class _BibliotecaState extends State<Biblioteca> {
       stream: _librosStream,
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if (snapshot.hasError) {
-          return const Text('Something went wrong');
+          return const Text('Algo salio mal');
         }
 
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Text("Loading");
+          return const Text("Trabajando...");
         }
 
         return ListView(
