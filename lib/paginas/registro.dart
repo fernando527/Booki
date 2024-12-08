@@ -1,6 +1,8 @@
+import 'package:booki/models/usuarios.dart';
 import 'package:flutter/material.dart';
 import 'package:booki/widgets/my_text_field.dart';
 import 'package:booki/widgets/my_title.dart';
+import 'package:booki/apis/firestore_service.dart';
 
 void main() => runApp(const Registro());
 
@@ -180,7 +182,12 @@ class _RegistroState extends State<Registro> {
               const SizedBox(height: 15),
               ElevatedButton(
                   onPressed: () {
-                    if (_formKey.currentState!.validate()) {}
+                    if (_formKey.currentState!.validate()) {
+                      Usuarios u1 = Usuarios(
+                          correo: emailController.text,
+                          nombre: nameController.text);
+                      FirestoreService.agregarUsuario(u1);
+                    }
                     // print("Nombre: ${nameController.text}");
                     // print("Correo: ${emailController.text}");
                     // print("Telefono: ${phoneController.text}");

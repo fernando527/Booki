@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:booki/apis/firestore.dart';
+import 'package:booki/models/libros.dart';
 
 //aqui ira la pantalla biblioteca en la cual se guardaran los libros que se van a leer
 
@@ -27,30 +27,27 @@ class _BibliotecaState extends State<Biblioteca> {
         }
 
         if (snapshot.connectionState == ConnectionState.waiting) {
-            return Container(
+          return Container(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CircularProgressIndicator()
-              ],
+              children: [CircularProgressIndicator()],
             ),
           );
-          
         }
 
         return ListView.builder(
-          itemCount:  snapshot.data!.docs.length,
+          itemCount: snapshot.data!.docs.length,
           itemBuilder: (context, index) {
-            DocumentSnapshot document=snapshot.data!.docs[index];
+            DocumentSnapshot document = snapshot.data!.docs[index];
             Map<String, dynamic> data =
-                    document.data()! as Map<String, dynamic>;
+                document.data()! as Map<String, dynamic>;
             return ListTile(
-                  title: Text(data['titulo']),
-                  subtitle: Text(data['autor']),
-                  onTap: (){
-                    Navigator.pushNamed(context, 'Libros');
-                  },
-                );
+              title: Text(data['titulo']),
+              subtitle: Text(data['autor']),
+              onTap: () {
+                Navigator.pushNamed(context, 'Libros');
+              },
+            );
           },
         );
       },

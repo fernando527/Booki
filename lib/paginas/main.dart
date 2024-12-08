@@ -1,4 +1,4 @@
-import 'package:booki/apis/firestore.dart';
+import 'package:booki/models/libros.dart';
 import 'package:booki/paginas/libros.dart';
 import 'package:booki/paginas/screens/biblioteca.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         'pantalla2': (context) => const Registro(),
         'pantalla3': (context) => const Principal(),
         'pantalla4': (context) => const Biblioteca(),
-        'Libros' : (context) => const LibrosPage(),
+        'Libros': (context) => const LibrosPage(),
       },
       home: Scaffold(
         appBar: AppBar(
