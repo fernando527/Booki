@@ -82,16 +82,20 @@ class _RegistroState extends State<Registro> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Booki"),
-        backgroundColor: Colors.purple,
+
+        backgroundColor: const Color.fromARGB(200, 173, 230, 187),
       ),
       body: Center(
         child: Form(
           key: _formKey,
           child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+
             children: [
-              MyTitle(title: "Registro"),
-              const SizedBox(height: 15),
+              const SizedBox(height: 100),
+              Padding(padding: EdgeInsets.only(left: 20),
+                child: MyTitle(title: "Registro", style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold)),
+              ),
               MyTextField(
                   hidePW: false,
                   myLabel: Text("Nombre"),
@@ -102,7 +106,7 @@ class _RegistroState extends State<Registro> {
                     }
                     return null;
                   }),
-              const SizedBox(height: 15),
+             
               MyTextField(
                   hidePW: false,
                   myLabel: Text("Correo"),
@@ -115,7 +119,7 @@ class _RegistroState extends State<Registro> {
                     }
                     return null;
                   }),
-              const SizedBox(height: 15),
+              
               MyTextField(
                 hidePW: false,
                 myLabel: Text("Telefono"),
@@ -132,9 +136,10 @@ class _RegistroState extends State<Registro> {
                   return null;
                 },
               ),
-              const SizedBox(height: 15),
+              
               MyTextField(
                 hidePW: hidePW,
+                maxLength: 30,
                 myLabel: Text("Contraseña"),
                 controller: pwController,
                 validator: (password) {
@@ -157,8 +162,9 @@ class _RegistroState extends State<Registro> {
                   },
                 ),
               ),
-              const SizedBox(height: 15),
+              
               MyTextField(
+                maxLength: 30,
                 hidePW: hidePW,
                 myLabel: Text("Confirmar contraseña"),
                 controller: pwConfirmationController,
@@ -179,8 +185,10 @@ class _RegistroState extends State<Registro> {
                   },
                 ),
               ),
-              const SizedBox(height: 15),
-              ElevatedButton(
+              Align(
+                alignment: Alignment.center,
+                child: ElevatedButton(
+                  
                   onPressed: () {
                    // if (_formKey.currentState!.validate()) {
                      // Usuarios u1 = Usuarios(
@@ -193,8 +201,22 @@ class _RegistroState extends State<Registro> {
                     // print("Telefono: ${phoneController.text}");
                     // print("Contraseña: ${pwController.text}");
                   },
-                  child: const Text("Registrarse"))
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color.fromARGB(200, 173, 230, 187),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        
+                      ),
+                      padding: const EdgeInsets.symmetric(horizontal: 140, vertical: 10)
+                  ),
+                  child: const Text("Registrarse",
+                    style: TextStyle(color: Colors.white, fontSize: 18)
+                    ),
+                  ),
+              )
+               
             ],
+      
           ),
         ),
       ),
