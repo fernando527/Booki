@@ -1,4 +1,5 @@
 import 'package:booki/models/libros.dart';
+import 'package:booki/paginas/PaginaError.dart';
 import 'package:booki/paginas/historiasPage.dart';
 import 'package:booki/paginas/libros.dart';
 import 'package:booki/paginas/screens/biblioteca.dart';
@@ -24,15 +25,23 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Booki',
-      initialRoute: 'pantalla1',
+      initialRoute: 'pantalla1' ,
       routes: {
         'pantalla1': (context) => const Login(),
         'pantalla2': (context) => const Registro(),
         'pantalla3': (context) => const Principal(),
         'pantalla4': (context) => const Biblioteca(),
-        'Libros': (context) => const LibrosPage(),
+        'Libros':  (context)  => const  LibrosPage(),
         'Escribir': (context) => const RedactarPage(),
+        'error' :(context) => const ErrorPage()
       },
+
+       onGenerateRoute: (settings) => MaterialPageRoute(
+        builder: (context) {
+          return const ErrorPage();
+        }
+       ),
+
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Material App Bar'),

@@ -5,8 +5,13 @@ class LibrosPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.green,
+    return Scaffold(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text('Aqui va el contenido de los libros'),
+        ],
+      ),
     );
   }
 }
