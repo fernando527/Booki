@@ -9,51 +9,45 @@ class Inicio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Column(
-       children: [
-
-        SizedBox(height: 12,),
-
-        TextField(
-        cursorColor: Colors.black,
-      
-
-         decoration:InputDecoration(
-      label: Text('Buscador',
-      style: TextStyle(
         
-        color: Colors.cyan[200],
-        fontWeight: FontWeight.bold,
-        fontSize: 15
-      ),
-      ),
+        children: [
+          SizedBox(height: 12),
 
-       border:const  OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.black, width: 1),
-              borderRadius: BorderRadius.all(
-                Radius.circular(400),
-              )
-      ),
+          TextField(
+            cursorColor: Colors.black,
+            decoration:InputDecoration(
+
+              label: Text('Buscar historias',
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 15
+                ),
+              ),
+
+              border:const  OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.black, width: 1),
+                borderRadius: BorderRadius.all(Radius.circular(30)),
+              ),
 
 
-       focusedBorder:  OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.greenAccent, width: 2),
-              borderRadius: BorderRadius.all(
-                Radius.circular(500),
-              )
-       ),
+              focusedBorder:  OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.black, width: 2),
+                borderRadius: BorderRadius.all(Radius.circular(30))
+              ),
 
 
-      suffixIcon: Icon(Icons.search),
-      suffixIconColor: Colors.green[200]
-
-        ),
-        )
-       ]
+              suffixIcon: Icon(Icons.search),
+              suffixIconColor: Colors.black,
+              ),
+          ),
+        ]
+        
       )
-
+      
     );
-
-
+    
   }
 }

@@ -8,52 +8,60 @@ class Perfil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(backgroundColor: Colors.white,),
       
-      body: Container(
-        
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              const SizedBox(height: 20),
-              const CircleAvatar(
-                radius: 50,
-               backgroundImage: AssetImage('assets/logo.png'),
-              ),
-              const SizedBox(height: 10),
-              const Text(
-                "Usuario",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              const Text(
-                "guest@domain.com",
-                style: TextStyle(color: Colors.grey),
-              ),
-              const SizedBox(height: 20),
-              _buildProfileOption(
-                icon: Icons.edit,
-                title: 'Edit profile information',
-                onTap: () {},
-              ),
-              _buildProfileOption(
-                icon: Icons.language,
-                title: 'Language',
-                trailing: const Text('English'),
-                onTap: () {},
-              ),
-              _buildProfileOption(
-                icon: Icons.brightness_6,
-                title: 'Theme',
-                trailing: const Text('Light mode'),
-                onTap: () {},
-              ),
-              const SizedBox(height: 30),
-              
-             Text('Escribe tu propia Hsitoria',
-             style: TextStyle(fontSize: 15,color: Colors.black,fontWeight: FontWeight.bold),
-             ),
-             const SizedBox(height: 22),
-
-             FloatingActionButton.extended(onPressed: (){
+      
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SizedBox(height: 20),
+            const CircleAvatar(
+              backgroundColor: Colors.white,
+              radius: 50,
+             backgroundImage: AssetImage('assets/logo.png'),
+            ),
+            const SizedBox(height: 10),
+            const Text(
+              "Usuario",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            const Text(
+              "guest@domain.com",
+              style: TextStyle(color: Colors.grey),
+            ),
+            const SizedBox(height: 20),
+            _buildProfileOption(
+              icon: Icons.person,
+              title: 'Editar perfil',
+              onTap: () {},
+            ),
+            _buildProfileOption(
+              icon: Icons.language,
+              title: 'Idioma',
+              trailing: const Text('Español'),
+              onTap: () {},
+            ),
+            _buildProfileOption(
+              icon: Icons.brightness_6,
+              title: 'Tema',
+              trailing: const Text('Modo claro'),
+              onTap: () {},
+            ),
+            const SizedBox(height: 30),
+            
+          const Text('¿Tienes una historia en mente? ¡Escríbela aquí!',
+            style: TextStyle(fontSize: 15,
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+            ),
+            textAlign: TextAlign.center,
+          ),
+           
+          const SizedBox(height: 22),
+          
+          Container(
+            child: FloatingActionButton.extended(onPressed: (){
               Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -61,17 +69,19 @@ class Perfil extends StatelessWidget {
                         ),
                       );
              }, 
-             icon: Icon(Icons.edit),
-             label: Text('Escribir Historia',
-             style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),
-             
-             
+              icon: Icon(Icons.edit, color: Colors.white),
+              label: Text('Escribir',
+                style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),   
+              ),
+              backgroundColor: Color.fromARGB(200, 173, 230, 187),
+              extendedPadding: const EdgeInsets.symmetric(horizontal: 116, vertical: 10),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),  
+              ),        
              ),
-             backgroundColor: Colors.blue[100],
-             )
-              
-            ],
-          ),
+           )
+            
+          ],
         ),
       ),
     );

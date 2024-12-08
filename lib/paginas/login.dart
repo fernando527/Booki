@@ -45,12 +45,22 @@ class _PantallaInicioState extends State<PantallaInicio> {
                 SizedBox(height: 250, child: Image.asset('assets/booki.jpeg')),
                 const SizedBox(height: 20),
                 TextFormField(
+                  cursorColor: Colors.grey,
                   controller: correoController,
                   decoration: InputDecoration(
                     prefixIcon: const Icon(Icons.email_outlined),
-                    labelText: 'Correo',
+                    labelText: 'Correo', 
+                    labelStyle: TextStyle(
+                      color: Colors.grey,
+                    ),
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                      borderSide: BorderSide(
+                        color: Colors.black, width: 2,
+                      )
                     ),
                   ),
                   maxLength: 50,
@@ -72,12 +82,22 @@ class _PantallaInicioState extends State<PantallaInicio> {
                 ),
                 const SizedBox(height: 20),
                 TextFormField(
+                  cursorColor: Colors.grey,
                   controller: contraseniaController,
                   decoration: InputDecoration(
                     prefixIcon: const Icon(Icons.lock),
                     labelText: 'Contraseña',
+                    labelStyle: TextStyle(
+                      color: Colors.grey,
+                    ),
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                      borderSide: BorderSide(
+                        color: Colors.black, width: 2,
+                      )
                     ),
                     suffixIcon: IconButton(
                       icon: Icon(
@@ -149,7 +169,7 @@ class _PantallaInicioState extends State<PantallaInicio> {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color.fromARGB(200, 173, 230, 187),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(30),
                       ),
                     ),
                     child: const Text(

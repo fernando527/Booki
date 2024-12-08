@@ -31,26 +31,58 @@ class _PrincipalPageState extends State<PrincipalPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Booki',style: TextStyle(color: Colors.green[200],fontWeight: FontWeight.bold),),
-      actions: [
+      backgroundColor: Colors.white,
+      appBar: AppBar(backgroundColor: Colors.white,title: Text('Booki',style: TextStyle(color: Colors.green[200],fontWeight: FontWeight.bold),),
+        actions: [
         IconButton(onPressed: (){}, icon: Icon(Icons.person),
         color: Colors.green[200],
         iconSize: 28,)
-      ],
+        ],
       ),
       body: PageView(
+        
         controller: _pageController,
         physics: const NeverScrollableScrollPhysics(),
         children: [
-          const Inicio(),
+
+        const SingleChildScrollView(
+          
+            child: Column(
+              
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(padding: EdgeInsets.symmetric(horizontal: 16, vertical: 4), child: Text(
+                  "¿Que deseas leer",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24
+                    ),
+                  ),
+                ),
+                Padding(padding: EdgeInsets.symmetric(horizontal: 16), child: Text(
+                  "hoy?", style: TextStyle(
+                    fontWeight: FontWeight.w900, fontSize: 24,
+                    ),
+                  ),
+                ),
+                
+                SizedBox(height: 16),
+                Inicio(),
+              ],
+            ),
+          ),
+
           const Biblioteca(),
           const Perfil(),
+
           Container(
             color: Colors.white,
           ),
         ],
+
+        
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
+        elevation: 16,
         currentIndex: currentIndex,
         onTap: (value) {
           setState(() {});
@@ -66,8 +98,11 @@ class _PrincipalPageState extends State<PrincipalPage> {
           );
         },
         
-        selectedItemColor: Colors.blueAccent,
-        unselectedItemColor: Colors.cyan,
+        selectedItemColor: Color.fromARGB(200, 173, 230, 187),
+        selectedLabelStyle: const TextStyle(
+          fontWeight: FontWeight.w900,
+        ),
+        unselectedItemColor: Colors.black,
         
         items: const [
           BottomNavigationBarItem(

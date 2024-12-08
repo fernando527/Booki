@@ -12,8 +12,9 @@ class MyTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    style = Theme.of(context).textTheme.displayMedium!;
-    return Center(
+    //style = Theme.of(context).textTheme.displayMedium!;
+    return Container(
+      
       child: Text(
         title,
         style: style,
