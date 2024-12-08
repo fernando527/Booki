@@ -1,4 +1,6 @@
+import 'package:booki/paginas/historiasPage.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Perfil extends StatelessWidget {
   const Perfil({super.key});
@@ -15,7 +17,7 @@ class Perfil extends StatelessWidget {
               const SizedBox(height: 20),
               const CircleAvatar(
                 radius: 50,
-                backgroundImage: AssetImage('assets/logo.png'),
+               backgroundImage: AssetImage('assets/logo.png'),
               ),
               const SizedBox(height: 10),
               const Text(
@@ -44,7 +46,29 @@ class Perfil extends StatelessWidget {
                 trailing: const Text('Light mode'),
                 onTap: () {},
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 30),
+              
+             Text('Escribe tu propia Hsitoria',
+             style: TextStyle(fontSize: 15,color: Colors.black,fontWeight: FontWeight.bold),
+             ),
+             const SizedBox(height: 22),
+
+             FloatingActionButton.extended(onPressed: (){
+              Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const RedactarPage(),
+                        ),
+                      );
+             }, 
+             icon: Icon(Icons.edit),
+             label: Text('Escribir Historia',
+             style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),
+             
+             
+             ),
+             backgroundColor: Colors.blue[100],
+             )
               
             ],
           ),

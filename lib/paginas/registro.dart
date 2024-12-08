@@ -182,12 +182,12 @@ class _RegistroState extends State<Registro> {
               const SizedBox(height: 15),
               ElevatedButton(
                   onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      Usuarios u1 = Usuarios(
-                          correo: emailController.text,
-                          nombre: nameController.text);
-                      FirestoreService.agregarUsuario(u1);
-                    }
+                   // if (_formKey.currentState!.validate()) {
+                     // Usuarios u1 = Usuarios(
+                       //   correo: emailController.text,
+                         // nombre: nameController.text);
+                      //FirestoreService.agregarUsuario(u1);
+                   // }
                     // print("Nombre: ${nameController.text}");
                     // print("Correo: ${emailController.text}");
                     // print("Telefono: ${phoneController.text}");
