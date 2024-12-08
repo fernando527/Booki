@@ -7,7 +7,7 @@ class MyTextField extends StatefulWidget {
   final TextEditingController? controller;
   final FormFieldValidator<String>? validator;
   final bool hidePW;
-  final int? maxLength;
+  final int maxLength;
 
   const MyTextField(
       {super.key,
@@ -17,7 +17,7 @@ class MyTextField extends StatefulWidget {
       this.controller,
       this.validator,
       this.hidePW = false,
-      this.maxLength});
+      this.maxLength = 30});
 
   @override
   State<MyTextField> createState() => _MyTextFieldState();

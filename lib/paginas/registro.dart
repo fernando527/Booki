@@ -81,8 +81,8 @@ class _RegistroState extends State<Registro> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
-
         backgroundColor: const Color.fromARGB(200, 173, 230, 187),
       ),
       body: Center(
@@ -92,11 +92,12 @@ class _RegistroState extends State<Registro> {
               crossAxisAlignment: CrossAxisAlignment.start,
 
             children: [
-              const SizedBox(height: 100),
+              const SizedBox(height: 50),
               Padding(padding: EdgeInsets.only(left: 20),
                 child: MyTitle(title: "Registro", style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold)),
               ),
               MyTextField(
+                  maxLength: 20,
                   hidePW: false,
                   myLabel: Text("Nombre"),
                   controller: nameController,
@@ -121,6 +122,7 @@ class _RegistroState extends State<Registro> {
                   }),
               
               MyTextField(
+                maxLength: 20,
                 hidePW: false,
                 myLabel: Text("Telefono"),
                 controller: phoneController,

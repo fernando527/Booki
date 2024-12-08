@@ -1,3 +1,4 @@
+import 'package:booki/paginas/configuracion.dart';
 import 'package:booki/paginas/screens/biblioteca.dart';
 import 'package:booki/paginas/screens/inicio.dart';
 import 'package:booki/paginas/screens/perfil.dart';
@@ -34,7 +35,14 @@ class _PrincipalPageState extends State<PrincipalPage> {
       backgroundColor: Colors.white,
       appBar: AppBar(backgroundColor: Colors.white,title: Text('Booki',style: TextStyle(color: Colors.green[200],fontWeight: FontWeight.bold),),
         actions: [
-        IconButton(onPressed: (){}, icon: Icon(Icons.person),
+        IconButton(onPressed: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const Configuracion(),
+            ),
+          );
+        }, icon: Icon(Icons.settings),
         color: Colors.green[200],
         iconSize: 28,)
         ],
