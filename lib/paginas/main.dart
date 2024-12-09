@@ -31,8 +31,8 @@ class MyApp extends StatelessWidget {
         'pantalla2': (context) => const Registro(),
         'pantalla3': (context) => const Principal(),
         'pantalla4': (context) => const Biblioteca(),
-        'Libros': (context) => const LibrosPage(),
-        'Escribir': (context) => const RedactarPage(),
+        //'Libros': (context) => const LibrosPage(),
+        'Escribir': (context) => RedactarPage(),
       },
       onGenerateRoute: (settings) => MaterialPageRoute(builder: (context) {
         return const ErrorPage();
