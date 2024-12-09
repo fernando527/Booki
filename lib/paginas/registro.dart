@@ -26,11 +26,11 @@ class _RegistroState extends State<Registro> {
   bool hidePW = true;
 
   @override
-  void registerUser() {
-    if (_formKey.currentState!.validate()) {
-      print("Usuario registrado: ${nameController.text}, ${emailController.text}");
-    }
+  void initState() {
+    super.initState();
+    hidePW = true;
   }
+
   @override
   void dispose() {
     nameController.dispose();
@@ -79,32 +79,6 @@ class _RegistroState extends State<Registro> {
   //   }
   //   return null;
   // }
-
-   Future<void> _registerUser() async {
-    if (_formKey.currentState!.validate()) {
-      final usuario = Usuarios(
-        correo: emailController.text,
-        nombre: nameController.text,
-      );
-
-      // Guardar datos en Firestore
-      final docRef = FirebaseFirestore.instance
-          .collection("usuarios")
-          .withConverter(
-            fromFirestore: Usuarios.fromFirestore,
-            toFirestore: (Usuarios usuario, options) => usuario.toFirestore(),
-          );
-      await docRef.add(usuario);
-
-      // Navegar a la pantalla principal
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => Principal(usuario: usuario),
-        ),
-      );
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -188,25 +162,7 @@ class _RegistroState extends State<Registro> {
                   },
                 ),
               ),
-
-              Align(
-                alignment: Alignment.center,
-                child: ElevatedButton(
-                  onPressed: _registerUser,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(200, 173, 230, 187),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    padding: const EdgeInsets.symmetric(horizontal: 140, vertical: 10),
-                  ),
-                  child: const Text(
-                    "Registrarse",
-                    style: TextStyle(color: Colors.white, fontSize: 18),
-                  ),
-                ),
-              ),
-
+              
               MyTextField(
                 maxLength: 30,
                 hidePW: hidePW,
@@ -229,7 +185,6 @@ class _RegistroState extends State<Registro> {
                   },
                 ),
               ),
-
               Align(
                 alignment: Alignment.center,
                 child: ElevatedButton(
@@ -247,7 +202,6 @@ class _RegistroState extends State<Registro> {
                       await docRef.add(usuario);
                     }
                   },
-
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Color.fromARGB(200, 173, 230, 187),
                       shape: RoundedRectangleBorder(

@@ -5,29 +5,24 @@ import 'package:booki/paginas/screens/inicio.dart';
 import 'package:booki/paginas/screens/perfil.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(Principal(
-  usuario: Usuarios(nombre: "Usuario", correo: "email@dominio.com"),
-));
+void main() => runApp(const Principal());
 
 class Principal extends StatelessWidget {
 
-  final Usuarios usuario;
 
-  const Principal({super.key, required this.usuario});
+  const Principal({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: PrincipalPage(usuario: usuario),
+      home: const PrincipalPage(),
     );
   }
 }
 
 class PrincipalPage extends StatefulWidget {
-  final Usuarios usuario;
-
-  const PrincipalPage({super.key, required this.usuario});
+  const PrincipalPage({super.key});
 
   @override
   State<PrincipalPage> createState() => _PrincipalPageState();
@@ -91,7 +86,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
           ),
 
           const Biblioteca(),
-           Perfil(usuario: widget.usuario),
+          const Perfil(),
 
           Container(
             color: Colors.white,
@@ -105,9 +100,11 @@ class _PrincipalPageState extends State<PrincipalPage> {
         elevation: 16,
         currentIndex: currentIndex,
         onTap: (value) {
-          setState(() {
-            currentIndex = value;   
-          });
+          setState(() {});
+          currentIndex = value;
+          
+
+          _pageController.jumpToPage(value);
 
           _pageController.animateToPage(
             value,

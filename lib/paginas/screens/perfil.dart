@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Perfil extends StatelessWidget {
-  const Perfil({super.key, required Usuarios usuario});
+  const Perfil({super.key});
 
   @override
   Widget build(BuildContext context) {
