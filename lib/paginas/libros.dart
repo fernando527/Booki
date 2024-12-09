@@ -10,14 +10,30 @@ class LibrosPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(libro.titulo),
+        title: Column(
+            children: [
+
+              Text(
+              libro.titulo+" (${libro.anio})",
+              style: TextStyle(fontSize: 20, 
+              fontWeight: FontWeight.bold),
+              textAlign: TextAlign.right,
+            ),
+            Text( 'by: ${libro.autor}',
+              style: TextStyle(
+                fontSize: 14, ),
+            ),
+            ],
+
+        ),
+        backgroundColor: Colors.green[200],
+        centerTitle: true,
       ),
       body: Column(
+        
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('Título: ${libro.titulo}', style: TextStyle(fontSize: 20)),
-          Text('Autor: ${libro.autor}', style: TextStyle(fontSize: 18)),
-          Text('Año: ${libro.anio}', style: TextStyle(fontSize: 16)),
+            Text('Contenido del libro ')
         ],
       ),
     );
