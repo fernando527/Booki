@@ -1,25 +1,33 @@
+import 'package:booki/models/usuarios.dart';
 import 'package:booki/paginas/configuracion.dart';
 import 'package:booki/paginas/screens/biblioteca.dart';
 import 'package:booki/paginas/screens/inicio.dart';
 import 'package:booki/paginas/screens/perfil.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(const Principal());
+void main() => runApp(Principal(
+  usuario: Usuarios(nombre: "Usuario", correo: "email@dominio.com"),
+));
 
 class Principal extends StatelessWidget {
-  const Principal({super.key});
+
+  final Usuarios usuario;
+
+  const Principal({super.key, required this.usuario});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const PrincipalPage(),
+      home: PrincipalPage(usuario: usuario),
     );
   }
 }
 
 class PrincipalPage extends StatefulWidget {
-  const PrincipalPage({super.key});
+  final Usuarios usuario;
+
+  const PrincipalPage({super.key, required this.usuario});
 
   @override
   State<PrincipalPage> createState() => _PrincipalPageState();
@@ -33,7 +41,11 @@ class _PrincipalPageState extends State<PrincipalPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(backgroundColor: Colors.white,title: Text('Booki',style: TextStyle(color: Colors.green[200],fontWeight: FontWeight.bold),),
+      appBar: AppBar(backgroundColor: Colors.white,
+        title: Text('Booki',
+        style: TextStyle(color: Colors.green[200],
+          fontWeight: FontWeight.bold),
+          ),
         actions: [
         IconButton(onPressed: (){
           Navigator.push(
@@ -79,7 +91,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
           ),
 
           const Biblioteca(),
-          const Perfil(),
+           Perfil(usuario: widget.usuario),
 
           Container(
             color: Colors.white,
@@ -93,11 +105,9 @@ class _PrincipalPageState extends State<PrincipalPage> {
         elevation: 16,
         currentIndex: currentIndex,
         onTap: (value) {
-          setState(() {});
-          currentIndex = value;
-          
-
-          _pageController.jumpToPage(value);
+          setState(() {
+            currentIndex = value;   
+          });
 
           _pageController.animateToPage(
             value,
