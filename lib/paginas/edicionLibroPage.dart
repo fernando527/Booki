@@ -6,8 +6,10 @@ import 'package:flutter/material.dart';
 class BookEditingPage extends StatefulWidget {
   final String title;
   final String description;
+  final String? book_id;
 
-  BookEditingPage({required this.title, required this.description});
+  BookEditingPage(
+      {required this.title, required this.description, this.book_id});
 
   @override
   State<BookEditingPage> createState() => _BookEditingPageState();
@@ -37,7 +39,7 @@ class _BookEditingPageState extends State<BookEditingPage> {
     super.initState();
     titleController = TextEditingController(text: widget.title);
     descriptionController = TextEditingController(text: widget.description);
-    bookContentController = TextEditingController(); 
+    bookContentController = TextEditingController();
   }
 
   @override
@@ -104,8 +106,10 @@ class _BookEditingPageState extends State<BookEditingPage> {
       context,
       MaterialPageRoute(
         builder: (context) => WritingPage(
-          title: widget.title, description: widget.description, bookContentController: bookContentController, 
-        ),
+            title: widget.title,
+            description: widget.description,
+            bookContentController: bookContentController,
+            book_id: widget.book_id),
       ),
     );
   }

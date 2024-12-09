@@ -6,12 +6,14 @@ class Libros {
   final String? autor;
   final String descripcion;
   final String? imagenURL;
+  final String? body;
   Libros(
       {this.imagenURL,
       this.anio,
       required this.titulo,
       this.autor,
-      required this.descripcion});
+      required this.descripcion,
+      this.body});
 
   factory Libros.fromFirestore(
     DocumentSnapshot<Map<String, dynamic>> snapshot,
@@ -23,7 +25,8 @@ class Libros {
         anio: data?['anio'],
         titulo: data?['titulo'],
         autor: data?['autor'],
-        descripcion: data?['descripcion']);
+        descripcion: data?['descripcion'],
+        body: data?['body']);
   }
   Map<String, dynamic> toFirestore() {
     return {
@@ -32,6 +35,7 @@ class Libros {
       if (titulo != null) "titulo": titulo,
       if (autor != null) "nombre": autor,
       if (descripcion != null) "descripcion": descripcion,
+      if (body != body) "body": body
     };
   }
 }

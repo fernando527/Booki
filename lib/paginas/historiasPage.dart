@@ -7,6 +7,7 @@ class RedactarPage extends StatelessWidget {
   RedactarPage({super.key});
   final TextEditingController titleController = TextEditingController();
   final TextEditingController descriptionController = TextEditingController();
+  late String book_id;
 
   @override
   Widget build(BuildContext context) {
@@ -129,15 +130,17 @@ class RedactarPage extends StatelessWidget {
                             fromFirestore: Libros.fromFirestore,
                             toFirestore: (Libros libro, options) =>
                                 libro.toFirestore());
-                    await docRef.add(libro);
+                    await docRef.add(libro).then((DocumentReference doc) {
+                      book_id = doc.id;
+                    });
 
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => BookEditingPage(
-                          title: title,
-                          description: description,
-                        ),
+                            title: title,
+                            description: description,
+                            book_id: book_id),
                       ),
                     );
                   }
