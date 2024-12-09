@@ -130,42 +130,20 @@ class _BookEditingPageState extends State<BookEditingPage> {
           ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _buildSectionTitle('Agregar una portada'),
-            SizedBox(height: 8),
-            _buildImagePicker(),
-            SizedBox(height: 20),
-            _buildSectionTitle('Título'),
-            SizedBox(height: 8),
-            TextField(
-              controller: titleController,
-              cursorColor: Colors.grey,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide(
-                    color: Colors.black,
-                    width: 2,
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(height: 20),
-            _buildSectionTitle('Descripción'),
-            SizedBox(height: 8),
-            SizedBox(
-              height: 120,
-              child: TextField(
-                controller: descriptionController,
-                maxLines: null,
-                expands: true,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _buildSectionTitle('Agregar una portada'),
+              SizedBox(height: 8),
+              _buildImagePicker(),
+              SizedBox(height: 20),
+              _buildSectionTitle('Título'),
+              SizedBox(height: 8),
+              TextField(
+                controller: titleController,
                 cursorColor: Colors.grey,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
@@ -180,29 +158,53 @@ class _BookEditingPageState extends State<BookEditingPage> {
                   ),
                 ),
               ),
-            ),
-            SizedBox(height: 20),
-            _buildSectionTitle('Géneros'),
-            SizedBox(height: 10),
-            _buildCategoryRow(),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: _navigateToWritingPage,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromARGB(200, 173, 230, 187),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
+              SizedBox(height: 20),
+              _buildSectionTitle('Descripción'),
+              SizedBox(height: 8),
+              SizedBox(
+                height: 120,
+                child: TextField(
+                  controller: descriptionController,
+                  maxLines: null,
+                  expands: true,
+                  cursorColor: Colors.grey,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide(
+                        color: Colors.black,
+                        width: 2,
+                      ),
+                    ),
+                  ),
                 ),
               ),
-              child: Text(
-                '¡Inicia a escribir!',
-                style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black),
+              SizedBox(height: 20),
+              _buildSectionTitle('Géneros'),
+              SizedBox(height: 10),
+              _buildCategoryRow(),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: _navigateToWritingPage,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(200, 173, 230, 187),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+                child: Text(
+                  '¡Inicia a escribir!',
+                  style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
