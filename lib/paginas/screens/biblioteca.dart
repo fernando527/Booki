@@ -24,9 +24,9 @@ class _BibliotecaState extends State<Biblioteca> {
         }
 
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Column(
+          return const Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [CircularProgressIndicator()],
+            children: [CircularProgressIndicator()],
           );
         }
 
