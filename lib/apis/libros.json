@@ -1,0 +1,64 @@
+{
+    "status": "OK",
+    "code": 200,
+    "locale": "en_US",
+    "seed": null,
+    "total": 5,
+    "data": [
+        {
+            "id": 1,
+            "title": "Alice: '--where's.",
+            "author": "Audrey Ritchie",
+            "genre": "Repudiandae",
+            "description": "Alice: 'three inches is such a long argument with the words 'DRINK ME' beautifully printed on it were white, but there were a Duck and a great deal of thought, and it was her turn or not. 'Oh.",
+            "isbn": "9799320850976",
+            "image": "http://placeimg.com/480/640/any",
+            "published": "1983-05-25",
+            "publisher": "Voluptatem Laboriosam"
+        },
+        {
+            "id": 2,
+            "title": "That he met in the.",
+            "author": "Edmund Corwin",
+            "genre": "Natus",
+            "description": "Alice, 'Have you seen the Mock Turtle in a few minutes it seemed quite natural); but when the tide rises and sharks are around, His voice has a timid voice at her for a minute, trying to put down.",
+            "isbn": "9780750888141",
+            "image": "http://placeimg.com/480/640/any",
+            "published": "2013-12-04",
+            "publisher": "Facere Et"
+        },
+        {
+            "id": 3,
+            "title": "I will prosecute.",
+            "author": "Alycia McCullough",
+            "genre": "Sed",
+            "description": "March Hare, 'that \"I like what I see\"!' 'You might just as the rest waited in silence. At last the Mouse, in a solemn tone, 'For the Duchess. 'I make you dry enough!' They all sat down again in a.",
+            "isbn": "9796633159932",
+            "image": "http://placeimg.com/480/640/any",
+            "published": "2003-01-04",
+            "publisher": "Ex Ut"
+        },
+        {
+            "id": 4,
+            "title": "Stole the Tarts?.",
+            "author": "Precious Gleason",
+            "genre": "Rerum",
+            "description": "Geography. London is the driest thing I ever heard!' 'Yes, I think you'd take a fancy to cats if you please! \"William the Conqueror, whose cause was favoured by the carrier,' she thought; 'and how.",
+            "isbn": "9793399856730",
+            "image": "http://placeimg.com/480/640/any",
+            "published": "1987-11-02",
+            "publisher": "Iusto Veniam"
+        },
+        {
+            "id": 5,
+            "title": "Alice, and she was.",
+            "author": "Suzanne O'Reilly",
+            "genre": "Quia",
+            "description": "IN the well,' Alice said very politely, 'if I had it written down: but I hadn't cried so much!' said Alice, quite forgetting that she had finished, her sister kissed her, and the procession moved.",
+            "isbn": "9794680855227",
+            "image": "http://placeimg.com/480/640/any",
+            "published": "1992-11-11",
+            "publisher": "Aut Et"
+        }
+    ]
+}
