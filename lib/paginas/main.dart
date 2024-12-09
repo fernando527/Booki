@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         'pantalla3': (context) => const Principal(),
         'pantalla4': (context) => const Biblioteca(),
         'Libros': (context) => const LibrosPage(),
-        'Escribir': (context) => const RedactarPage(),
+        'Escribir': (context) => RedactarPage(),
       },
       home: Scaffold(
         appBar: AppBar(

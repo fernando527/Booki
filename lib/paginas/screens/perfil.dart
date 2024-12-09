@@ -52,7 +52,7 @@ class Perfil extends StatelessWidget {
                 Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const RedactarPage(),
+                            builder: (context) => RedactarPage(),
                           ),
                         );
                }, 
