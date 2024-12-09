@@ -1,10 +1,11 @@
+import 'package:booki/models/usuarios.dart';
 import 'package:booki/paginas/configuracion.dart';
 import 'package:booki/paginas/historiasPage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Perfil extends StatelessWidget {
-  const Perfil({super.key});
+  const Perfil({super.key, required Usuarios usuario});
 
   @override
   Widget build(BuildContext context) {
