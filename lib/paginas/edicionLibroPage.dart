@@ -30,8 +30,6 @@ class _BookEditingPageState extends State<BookEditingPage> {
   String? selectedCategory;
   late TextEditingController titleController;
   late TextEditingController descriptionController;
-
-  // Controlador para guardar el contenido del libro
   late TextEditingController bookContentController;
 
   @override
@@ -39,7 +37,7 @@ class _BookEditingPageState extends State<BookEditingPage> {
     super.initState();
     titleController = TextEditingController(text: widget.title);
     descriptionController = TextEditingController(text: widget.description);
-    bookContentController = TextEditingController(); // Inicializamos vacío
+    bookContentController = TextEditingController(); 
   }
 
   @override
@@ -106,7 +104,7 @@ class _BookEditingPageState extends State<BookEditingPage> {
       context,
       MaterialPageRoute(
         builder: (context) => WritingPage(
-          controller: bookContentController,
+          title: widget.title, description: widget.description, bookContentController: bookContentController, 
         ),
       ),
     );
