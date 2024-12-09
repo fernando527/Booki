@@ -37,14 +37,16 @@ class _BibliotecaState extends State<Biblioteca> {
             Map<String, dynamic> data =
                 document.data()! as Map<String, dynamic>;
             Libros libro = Libros(
-              anio: data['anio'] ?? 'Desconocido',
+              imagenURL: '',
+              //anio: data['anio'] ?? 'Desconocido',
               titulo: data['titulo'] ?? 'Sin título',
               autor: data['autor'] ?? 'Anónimo',
+              descripcion: data['descripcion'],
             );
 
             return ListTile(
               title: Text(libro.titulo),
-              subtitle: Text(libro.autor),
+              subtitle: Text(libro.autor!),
               onTap: () {
                 Navigator.push(
                   context,
