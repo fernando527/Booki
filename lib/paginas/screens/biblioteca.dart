@@ -1,14 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:booki/models/libros.dart';
-
-//aqui ira la pantalla biblioteca en la cual se guardaran los libros que se van a leer
+import 'package:booki/paginas/libros.dart';
 
 class Biblioteca extends StatefulWidget {
-  const Biblioteca({
-    super.key,
-  });
+  const Biblioteca({super.key});
 
   @override
   State<Biblioteca> createState() => _BibliotecaState();
@@ -17,6 +13,7 @@ class Biblioteca extends StatefulWidget {
 class _BibliotecaState extends State<Biblioteca> {
   final Stream<QuerySnapshot> _librosStream =
       FirebaseFirestore.instance.collection('libros').snapshots();
+
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
@@ -27,11 +24,9 @@ class _BibliotecaState extends State<Biblioteca> {
         }
 
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Container(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [CircularProgressIndicator()],
-            ),
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [CircularProgressIndicator()],
           );
         }
 
@@ -41,11 +36,22 @@ class _BibliotecaState extends State<Biblioteca> {
             DocumentSnapshot document = snapshot.data!.docs[index];
             Map<String, dynamic> data =
                 document.data()! as Map<String, dynamic>;
+            Libros libro = Libros(
+              anio: data['anio'] ?? 'Desconocido',
+              titulo: data['titulo'] ?? 'Sin título',
+              autor: data['autor'] ?? 'Anónimo',
+            );
+
             return ListTile(
-              title: Text(data['titulo']),
-              subtitle: Text(data['autor']),
+              title: Text(libro.titulo),
+              subtitle: Text(libro.autor),
               onTap: () {
-                Navigator.pushNamed(context, 'Libros');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => LibrosPage(libro: libro),
+                  ),
+                );
               },
             );
           },
