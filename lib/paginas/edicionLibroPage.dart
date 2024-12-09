@@ -1,4 +1,6 @@
+import 'package:booki/models/libros.dart';
 import 'package:booki/paginas/escribirPage.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class BookEditingPage extends StatefulWidget {
@@ -81,7 +83,7 @@ class _BookEditingPageState extends State<BookEditingPage> {
     }
   }
 
-  void _saveChanges() {
+  void _saveChanges() async {
     final updatedTitle = titleController.text;
     final updatedDescription = descriptionController.text;
     final bookContent = bookContentController.text;
@@ -194,7 +196,10 @@ class _BookEditingPageState extends State<BookEditingPage> {
               ),
               child: Text(
                 '¡Inicia a escribir!',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black),
+                style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black),
               ),
             ),
           ],
@@ -212,7 +217,8 @@ class _BookEditingPageState extends State<BookEditingPage> {
         ),
         Text(
           ' *',
-          style: TextStyle(color: Colors.red, fontSize: 16, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: Colors.red, fontSize: 16, fontWeight: FontWeight.bold),
         ),
       ],
     );
@@ -275,7 +281,8 @@ class _BookEditingPageState extends State<BookEditingPage> {
           ),
           child: Text(
             'Géneros',
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black),
+            style: TextStyle(
+                fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black),
           ),
         ),
       ],
